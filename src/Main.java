@@ -14,10 +14,11 @@ public class Main {
 
         char player = 'X';
         boolean game_over = false;
+        boolean game_draw = false;
 
         Scanner sc = new Scanner(System.in);
 
-        while (!game_over) {
+        while (!game_over&&!game_draw) {
             print(board);
             System.out.println("Player " + player + " enter:");
             int row = sc.nextInt();
@@ -26,11 +27,18 @@ public class Main {
             if (row>=0&&row<3&&col>=0&&col<3&&board[row][col] == ' ') {
                 board[row][col] = player;
                 game_over = hasWon(board, player);
+                game_draw = if_draw(board);
                 if (game_over) {
                     System.out.println("Player " + player + " has won:)");
-                } else {
+                }
+                else if(game_draw)
+                {
+                    System.out.println("It's a tie :|");
+                }
+                else {
                     player = player == 'X' ? 'O' : 'X';
                 }
+
             } else {
                 System.out.println("Invalid move.Try Again");
             }
@@ -65,5 +73,18 @@ public class Main {
             return true;
 
         return false;
+    }
+
+    public static boolean if_draw(char[][] board)
+    {
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                if(board[i][j]==' ')
+                    return false;
+            }
+        }
+        return true;
     }
 }

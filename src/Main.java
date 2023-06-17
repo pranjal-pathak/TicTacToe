@@ -29,7 +29,7 @@ public class Main {
                 game_over = hasWon(board, player);
                 game_draw = if_draw(board);
                 if (game_over) {
-                    System.out.println("Player " + player + " has won:)");
+                    System.out.println("Player " + player + " has won:D");
                 }
                 else if(game_draw)
                 {

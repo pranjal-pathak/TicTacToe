@@ -11,4 +11,5 @@ To run the Tic-Tac-Toe game, follow these steps:
 3. Valid moves are within the range of 0 to 2 and must correspond to an empty space on the board.
 4. The game continues until one player achieves three of their symbols in a row or all spaces on the board are filled.
 5. If a player wins, a victory message is displayed.
+6. 6. If the game ends in a tie, a message indicating a draw is shown.
 
